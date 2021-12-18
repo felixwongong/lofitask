@@ -9,7 +9,4 @@ export default createStore({
       state.authModalShow = !state.authModalShow;
     },
   },
-  // getters: {
-  //   authModalShow: (state) => state.authModalShow,
-  // },
 });

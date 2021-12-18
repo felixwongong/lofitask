@@ -8,11 +8,10 @@ import VeeValidatePlugin from "./includes/plugins/validation";
 import "./assets/tailwind.css";
 import "./assets/main.css";
 
-let app = createApp(App);
+const app = createApp(App);
 
 //use allow to register plugin
 //store from vuex library, store stands for a container to contain the data
-
 app.use(store);
 app.use(router);
 

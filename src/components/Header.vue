@@ -30,10 +30,6 @@ export default {
   methods: {
     //mapMutations return an Object
     ...mapMutations(["toggleAuthModal"]),
-    // toggleAuthModal() {
-    //   //commit allow us to use mutation function in store
-    //   this.$store.commit("toggleAuthModal");
-    // },
   },
 };
 </script>

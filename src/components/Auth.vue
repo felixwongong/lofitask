@@ -310,7 +310,7 @@ export default {
     return {
       tab: "login",
       schema: {
-        name: "required",
+        name: "required|min:3|max:100|alpha_spaces",
         email: "",
         age: "",
         password: "",
@@ -321,15 +321,9 @@ export default {
     };
   },
   computed: {
-    //mapState generate getter function for state
-    // createAlisas
     ...mapState({
       modal: "authModalShow",
     }),
-    // ...mapState(["authModalShow"]),
-    // authModalShow() {
-    //   return this.$store.getters.authModalShow;
-    // },
   },
   methods: {
     ...mapMutations(["toggleAuthModal"]),
