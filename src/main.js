@@ -4,18 +4,26 @@ import router from "./router";
 import store from "./store";
 
 import VeeValidatePlugin from "./includes/plugins/validation";
+import { auth } from "./includes/firebase";
 
 import "./assets/tailwind.css";
 import "./assets/main.css";
 
-const app = createApp(App);
+let app;
 
-//use allow to register plugin
-//store from vuex library, store stands for a container to contain the data
-app.use(store);
-app.use(router);
+auth.onAuthStateChanged(() => {
+  //Singleton
+  if (!app) {
+    app = createApp(App);
 
-//create custom plugin for form validation
-app.use(VeeValidatePlugin);
+    //use allow to register plugin
+    //store from vuex library, store stands for a container to contain the data
+    app.use(store);
+    app.use(router);
 
-app.mount("#app");
+    //create custom plugin for form validation
+    app.use(VeeValidatePlugin);
+
+    app.mount("#app");
+  }
+});

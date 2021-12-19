@@ -486,5 +486,8 @@ export default {
     AppHeader,
     AuthModel,
   },
+  created() {
+    this.$store.dispatch("init_login");
+  },
 };
 </script>
